@@ -1,10 +1,9 @@
 FROM node:18-alpine
 
-COPY . /vitepress
-WORKDIR /vitepress
-VOLUME /vitepress
+WORKDIR /app
 
-RUN npm install vue@3.2.39 vitepress@1.0.0-alpha.15 
+RUN npm install vue@3.2.39 vitepress@1.0.0-alpha.15
 
 EXPOSE 3000
-CMD ["npm", "run", "vitepress", "dev", "docs"]
+
+CMD npm run env -- vitepress dev --host 0.0.0.0 --port 3000
