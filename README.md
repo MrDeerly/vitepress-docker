@@ -20,7 +20,7 @@ docker pull mrdeerly/vitepress
 cd /path/to/your/vitepress/installation
 
 export VITEPRESS_DOCKER_PORT="3000"
-export VITEPRESS_DOCKER_MOUNT="-v $(CURDIR):/vitepress"
+export VITEPRESS_DOCKER_MOUNT="-v $(CURDIR):/app"
 export VITEPRESS_DOCKER_OPTS="--rm $(VITEPRESS_DOCKER_MOUNT)"
 
 docker run $(VITEPRESS_DOCKER_OPTS) -p $(VITEPRESS_DOCKER_PORT):3000 mrdeerly/vitepress
